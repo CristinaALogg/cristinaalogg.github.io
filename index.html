@@ -1,150 +1,455 @@
-<!-- tells the browser that it should expect html -->
-<!DOCTYPE html>
-<!-- opening html tag identifies the contained text as html and tells the browser and search engines that the page is in English -->
-<html lang="en">
-<!-- head element, bounded by <head> tags, contains metadata and links to external files -->
-<head>
-	<!-- metadata identifying how characters are encoded. There are many ways to encode text, but UTF-8 standard in web development. -->
-	<meta charset="utf-8">
-	<!-- Creates a title that is displayed in the browser's title bar, search engine results, etc. but not in the page body -->
-	<title>11.S941 - Cristina A. Logg's Course Page</title>
-<!-- closes the head element-->
-</head>
-<!-- the body element contains content that is displayed in the browser window -->
-<body>
-	<!-- create a header -->
-	<h1>Cristina A. Logg</h1>
-	<!-- main content paragraph -->
-	<p>Cristina Logg is a Master in City Planning candidate in the Environmental Policy and Planning (EPP)
-		group at MIT's Department of Urban Studies and Planning (DUSP). Cristina is
-		pursuing both the Environmental Planning Certificate from DUSP and the Sustainability Certificate from the Sustainability Initiative.
-		Prior to joining MIT, Cristina worked as a Program Administrator for the Tufts
-		International Relations Program and as a Freedom of Information Act Litigation Case Officer for
-		the U.S. Department of State. Cristina has a Masters in Conflict Resolution from Georgetown
-		University, in which she focused on environmental and
-		corporate conflict resolution and change management. Cristina has had training on issues of
-		international and domestic environmental policy, corporate sustainability, and consensus building methods.</p>
-
-		<p>As a planner fascinated by how to solve for and plan for environmental problems, many of which are exacerbated by climate change, in an urban context,
-		the hurricane that Houston last year was particularly interesting. After Hurricane Harvey, <a href="https://www.nytimes.com/interactive/2017/08/24/us/hurricane-harvey-texas.html"> the New York Times<a/> published a fascinating article showing,
-		via a variety of graphics, how Houston was impacted by Harvey and its devastating rainfall. Two graphics are pictured below with the first showing,
-	 	at one point in time, how much rain had fallen in the Houston area. The second shows shelters and their associated capacity in the Houston region.</p>
-
-		<img src="Pic1.png" alt="Rainfall Totals at 8AM Monday" height="628" width="1075">
-		<img src="Pic2.png" alt="Shelter Locations and Capacity in the Houston Area" height="795" width="1173">
-
-<!-- end the document body -->
-</body>
-<!-- end the html file  -->
-</html>
-
 <!DOCTYPE html>
 <html lang="en">
+	<!-- Please note that the basis for this template came from Start Bootstrap. The initial template was entitled "Grayscale". Find out more here: https://startbootstrap.com/template-overviews/grayscale/ -->
 <head>
-  <title> Stacked Bar Chart of Boston 311 Calls</title>
-  <strong> Cristina Logg - Stacked Bar Chart of Boston 311 Calls by Neighborhood </strong> <br>
-  <b> Code Source: </b> Mike Bostock @ <a href = "https://bl.ocks.org/mbostock/3886394"> https://bl.ocks.org/mbostock/3886394 </a> <br>
-  <b> Data Source: </b> Boston 311 Calls from <a href = "https://data.boston.gov/dataset/311-service-requests" > Analyze Boston</a>
-  <script src='http://d3js.org/d3.v4.min.js' charset="utf-8"></script>
-  <meta charset="utf-8">
-  <script src="data/neigh_311.json"></script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Cristina Logg - Master in City Planning Candidate - Graduating June 2018</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- Theme CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
-<body>
-<meta charset="utf-8">
-<style>
 
-.bar {
-  fill: steelblue;
-}
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-.axis path {
-  display: none;
-}
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i> <span class="light">Cristina BLogg</span>
+                </a>
+            </div>
 
-</style>
-<svg width="960" height="500"></svg>
-<script src="//d3js.org/d3.v4.min.js"></script>
-<script>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+					<li>
+                        <a class="page-scroll" href="#Resume">Resume (Long Format)</a>
+                    </li>
+					<li>
+                        <a class="page-scroll" href="#BigDataNBC">Big Data Normalized Bar Chart</a>
+                    </li>
+          <li>
+                        <a class="page-scroll" href="#BigDataBC">Big Data Bar Chart</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
-var svg = d3.select("svg"),
-    margin = {top: 20, right: 100, bottom: 60, left: 40},
-    width = +svg.attr("width") - margin.left - margin.right,
-    height = +svg.attr("height") - margin.top - margin.bottom,
-    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    <!--  Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">Cristina Logg</h1>
+                        <p class="intro-text">Environmental Planner, Corporate Sustainability Wonk, & Water/Energy Nerd.</p>
+                        <a href="#about" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-var x = d3.scaleBand()
-    .rangeRound([0, width])
-    .padding(0.1)
-    .align(0.1);
+    <!-- About Section -->
+    <section id="about" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>About Cristina</h2>
+                <p> Cristina grew up in the San Francisco Bay Area as the child of two computer scientists. From an early age, she loved being outside, particularly river rafting and hiking through the northern California and Oregon forests, rivers, coastline and mountains. She moved to DC for college where she studied International Relations and Conflict Resolution at George Washington University and Georgetown, respectively. Following this, she spent five years at the State Department and two years at Tufts University. She is particularly interested sustainable  water and energy management in the urban environment. At DUSP, she hopes to gain a deeper understanding of transboundary environmental planning, economics, and environmental policy as well as how corporate environmental policies can be aligned to promote environmental sustainability. In her free time, Cristina continues to love hiking, travelling, photography, yoga, and reading science fiction and fantasy books. She lives in Davis Square with her partner and two cats.</p>
+				<p> Cristina is currently in her second year as an Master in City Planning student with the Environmental Policy and Planning Group. </p>
+			    <a href="#Resume" class="btn btn-circle page-scroll">
+                        <i class="fa fa-angle-double-down animated"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 
-var y = d3.scaleLinear()
-    .rangeRound([height, 0]);
+    <section id="Resume" class="content-section text-center">
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Resume</h2>
 
-var z = d3.scaleOrdinal()
-    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+					<!DOCTYPE html>
+					<html>
+						<head>
+							<style>
+								img {
+								    display: block;
+								    margin: 0 auto;
+								}
+							</style>
+						</head>
+						<body>
+							<img src="img/Resume1.jpg" alt="Resume Page 1" style="width:100%">
+						</body>
+					</html>
+          <p> </p>
+          <html>
+            <head>
+              <style>
+                img {
+                    display: block;
+                    margin: 0 auto;
+                }
+              </style>
+            </head>
+            <body>
+              <img src="img/Resume2.jpg" alt="Resume Page 2" style="width:100%">
+            </body>
+          </html>
+					<p> </p>
+					 <a href="#BigDataNBC" class="btn btn-circle page-scroll">
+                        <i class="fa fa-angle-double-down animated"></i>
+                     </a>
+					<p> </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-var stack = d3.stack()
-    .offset(d3.stackOffsetExpand);
+    <!-- Big Data Normalzied Bar Chart #1 -->
+    <section id="BigDataNBC" class="content-section text-center">
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Normalized Stacked Bar Chart of Boston 311 Calls by Neighborhood</h2>
 
-d3.csv("neigh_311.csv", type, function(error, data) {
-  if (error) throw error;
+                    <!DOCTYPE html>
+                    <html lang="en">
+                    <head>
+                      <title> Normalized Stacked Bar Chart of Boston 311 Calls</title>
+                      <strong> Cristina Logg - Normalized Stacked Bar Chart of Boston 311 Calls by Neighborhood </strong> <br>
+                      <b> Code Source: </b> Mike Bostock @ <a href = "https://bl.ocks.org/mbostock/3886394"> https://bl.ocks.org/mbostock/3886394 </a> <br>
+                      <b> Data Source: </b> Boston 311 Calls from <a href = "https://data.boston.gov/dataset/311-service-requests" > Analyze Boston</a>
+                      <script src='http://d3js.org/d3.v4.min.js' charset="utf-8"></script>
+                      <meta charset="utf-8">
+                      <script src="neigh_311.json"></script>
+                    </head>
+                    <body>
+                    <meta charset="utf-8">
+                    <style>
 
-  data.sort(function(a, b) { return b[data.columns[1]] / b.total - a[data.columns[1]] / a.total; });
+                    .bar {
+                      fill: steelblue;
+                    }
 
-  x.domain(data.map(function(d) { return d.Name; }));
-  z.domain(data.columns.slice(1));
+                    .axis path {
+                      display: none;
+                    }
 
-  var serie = g.selectAll(".serie")
-    .data(stack.keys(data.columns.slice(1))(data))
-    .enter().append("g")
-      .attr("class", "serie")
-      .attr("fill", function(d) { return z(d.key); });
+                    </style>
+                    <svg width="960" height="500"></svg>
+                    <script src="//d3js.org/d3.v4.min.js"></script>
+                    <script>
 
-  serie.selectAll("rect")
-    .data(function(d) { return d; })
-    .enter().append("rect")
-      .attr("x", function(d) { return x(d.data.Name); })
-      .attr("y", function(d) { return y(d[1]); })
-      .attr("height", function(d) { return y(d[0]) - y(d[1]); })
-      .attr("width", x.bandwidth());
+                    var svg = d3.select("svg"),
+                        margin = {top: 20, right: 100, bottom: 60, left: 40},
+                        width = +svg.attr("width") - margin.left - margin.right,
+                        height = +svg.attr("height") - margin.top - margin.bottom,
+                        g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  g.append("g")
-      .attr("class", "axis axis--x")
-      .attr("transform", "translate(0," + height + ")")
-      .call(d3.axisBottom(x))
-        .selectAll("text")
-          .style("text-anchor", "end")
-          .attr("dx", "-.8em")
-          .attr("dy", ".05em")
-          .attr("transform", "rotate(-25)");
+                    var x = d3.scaleBand()
+                        .rangeRound([0, width])
+                        .padding(0.1)
+                        .align(0.1);
 
-  g.append("g")
-      .attr("class", "axis axis--y")
-      .call(d3.axisLeft(y).ticks(10, "%"));
+                    var y = d3.scaleLinear()
+                        .rangeRound([height, 0]);
 
-  var legend = serie.append("g")
-      .attr("class", "legend")
-      .attr("transform", function(d) { var d = d[d.length - 1]; return "translate(" + (x(d.data.Name) + x.bandwidth()) + "," + ((y(d[0]) + y(d[1])) / 2) + ")"; });
+                    var z = d3.scaleOrdinal()
+                        .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
-  legend.append("line")
-      .attr("x1", -6)
-      .attr("x2", 6)
-      .attr("stroke", "#000");
+                    var stack = d3.stack()
+                        .offset(d3.stackOffsetExpand);
 
-  legend.append("text")
-      .attr("x", 9)
-      .attr("dy", "0.35em")
-      .attr("fill", "#000")
-      .style("font", "10px sans-serif")
-      .text(function(d) { return d.key; });
-});
+                    d3.csv("neigh_311.csv", type, function(error, data) {
+                      if (error) throw error;
 
-function type(d, i, columns) {
-  for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
-  d.total = t;
-  return d;
-}
+                      data.sort(function(a, b) { return b[data.columns[1]] / b.total - a[data.columns[1]] / a.total; });
 
-</script>
+                      x.domain(data.map(function(d) { return d.Name; }));
+                      z.domain(data.columns.slice(1));
+
+                      var serie = g.selectAll(".serie")
+                        .data(stack.keys(data.columns.slice(1))(data))
+                        .enter().append("g")
+                          .attr("class", "serie")
+                          .attr("fill", function(d) { return z(d.key); });
+
+                      serie.selectAll("rect")
+                        .data(function(d) { return d; })
+                        .enter().append("rect")
+                          .attr("x", function(d) { return x(d.data.Name); })
+                          .attr("y", function(d) { return y(d[1]); })
+                          .attr("height", function(d) { return y(d[0]) - y(d[1]); })
+                          .attr("width", x.bandwidth());
+
+
+                      g.append("g")
+                          .attr("class", "axis axis--x")
+                          .attr("transform", "translate(0," + height + ")")
+                          .call(d3.axisBottom(x))
+                            .selectAll("text")
+                              .style("text-anchor", "end")
+                              .attr("dx", "-.8em")
+                              .attr("fill", "white")
+                              .attr("dy", ".05em")
+                              .attr("transform", "rotate(-25)");
+
+                      g.append("g")
+                          .attr("class", "axis axis--y")
+                          .call(d3.axisLeft(y).ticks(10, "%"))
+                            .selectAll("text")
+                              .attr("fill", "white");
+
+                      var legend = serie.append("g")
+                          .attr("class", "legend")
+                          .attr("transform", function(d) { var d = d[d.length - 1]; return "translate(" + (x(d.data.Name) + x.bandwidth()) + "," + ((y(d[0]) + y(d[1])) / 2) + ")"; });
+
+                      legend.append("line")
+                          .attr("x1", -6)
+                          .attr("x2", 6)
+                          .attr("stroke", "#000");
+
+                      legend.append("text")
+                          .attr("x", 9)
+                          .attr("dy", "0.35em")
+                          .attr("fill", "white")
+                          .style("font", "10px sans-serif")
+                          .style("fill", 'white')
+                          .text(function(d) { return d.key; });
+                    });
+
+                    function type(d, i, columns) {
+                      for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
+                      d.total = t;
+                      return d;
+                    }
+
+                    </script>
+                    </body>
+                    </html>
+					<p> </p>
+          <a href="#BigDataBC" class="btn btn-circle page-scroll">
+                       <i class="fa fa-angle-double-down animated"></i>
+                    </a>
+          <p> </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Big Data Non-Normalized Bar Chart #1 -->
+    <section id="BigDataBC" class="content-section text-center">
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2> Stacked Bar Chart of Boston 311 Calls by Neighborhood</h2>
+
+                    <!DOCTYPE html>
+                    <html lang="en">
+                    <head>
+                      <title> Stacked Bar Chart of Boston 311 Calls</title>
+                      <strong> Cristina Logg - Stacked Bar Chart of Boston 311 Calls by Neighborhood </strong> <br>
+                      <b> Code Source: </b> Mike Bostock @ <a href = "https://bl.ocks.org/mbostock/3886208"> https://bl.ocks.org/mbostock/3886208 </a> <br>
+                      <b> Data Source: </b> Boston 311 Calls from <a href = "https://data.boston.gov/dataset/311-service-requests" > Analyze Boston</a>
+                      <script src='http://d3js.org/d3.v4.min.js' charset="utf-8"></script>
+                      <meta charset="utf-8">
+                      <script src="neigh_311.json"></script>
+                    </head>
+
+                    <body>
+
+                    <style>
+                    .axis .domain {
+                      display: none;
+                    }
+                    </style>
+
+                    <svg width="960" height="500"></svg>
+                    <script src="https://d3js.org/d3.v4.min.js"></script>
+                    <script>
+                    var svg = d3.select("svg"),
+                        margin = {top: 20, right: 20, bottom: 60, left: 40},
+                        width = +svg.attr("width") - margin.left - margin.right,
+                        height = +svg.attr("height") - margin.top - margin.bottom,
+                        g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+                    var x = d3.scaleBand()
+                        .rangeRound([0, width])
+                        .paddingInner(0.05)
+                        .align(0.1);
+
+                    var y = d3.scaleLinear()
+                        .rangeRound([height, 0]);
+
+                    var z = d3.scaleOrdinal()
+                        .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+
+                    d3.csv("neigh_311.csv", function(d, i, columns) {
+                      for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
+                      d.total = t;
+                      return d;
+                    }, function(error, data) {
+                      if (error) throw error;
+
+                      var keys = data.columns.slice(1);
+
+                      data.sort(function(a, b) { return b.total - a.total; });
+                      x.domain(data.map(function(d) { return d.Name; }));
+                      y.domain([0, d3.max(data, function(d) { return d.total; })]).nice();
+                      z.domain(keys);
+
+                      g.append("g")
+                        .selectAll("g")
+                        .data(d3.stack().keys(keys)(data))
+                        .enter().append("g")
+                          .attr("fill", function(d) { return z(d.key); })
+                        .selectAll("rect")
+                        .data(function(d) { return d; })
+                        .enter().append("rect")
+                          .attr("x", function(d) { return x(d.data.Name); })
+                          .attr("y", function(d) { return y(d[1]); })
+                          .attr("height", function(d) { return y(d[0]) - y(d[1]); })
+                          .attr("width", x.bandwidth());
+
+                      g.append("g")
+                          .attr("class", "axis")
+                          .attr("transform", "translate(0," + height + ")")
+                          .call(d3.axisBottom(x))
+                            .selectAll("text")
+                              .style("text-anchor", "end")
+                              .attr("dx", "-.8em")
+                              .attr("dy", ".05em")
+                              .attr("fill", "white")
+                              .attr("transform", "rotate(-25)");
+
+                      g.append("g")
+                          .attr("class", "axis")
+                          .call(d3.axisLeft(y).ticks(null, "s"))
+                        .append("text")
+                          .attr("x", 2)
+                          .attr("y", y(y.ticks().pop()) + 0.5)
+                          .attr("dy", "0.32em")
+                          .attr("fill", "white")
+                          .attr("font-weight", "bold")
+                          .attr("text-anchor", "start")
+                          .text("Total Number of 311 Calls")
+                          .style("fill", 'white');
+
+                      var legend = g.append("g")
+                          .attr("font-family", "sans-serif")
+                          .attr("font-size", 10)
+                          .attr("text-anchor", "end")
+                          .attr("fill", "white")
+                        .selectAll("g")
+                        .data(keys.slice().reverse())
+                        .enter().append("g")
+                          .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+                      legend.append("rect")
+                          .attr("x", width - 19)
+                          .attr("width", 19)
+                          .attr("height", 19)
+                          .attr("fill", z);
+
+                      legend.append("text")
+                          .attr("x", width - 24)
+                          .attr("y", 9.5)
+                          .attr("dy", "0.32em")
+                          .style("fill", 'white')
+                          .text(function(d) { return d; });
+                    });
+                    </script>
+                    </body>
+                    </html>
+
+          <p> </p>
+          <a href="#contact" class="btn btn-circle page-scroll">
+                       <i class="fa fa-angle-double-down animated"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container content-section text-center">
+        <div class="contact-section">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Contact Cristina Logg</h2>
+                <p>Feel free to email Cristina anytime.</p>
+                <p><a href="mailto:logg@mit.edu"
+                        class="btn btn-default btn-lg">Logg@MIT.edu</a>
+                </p>
+                <p><a href="mailto:cristinalogg@gmail.com"
+                        class="btn btn-default btn-lg">cristinalogg@gmail.com</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; Cristina Logg 2018</p>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/grayscale.min.js"></script>
+
 </body>
+
 </html>
